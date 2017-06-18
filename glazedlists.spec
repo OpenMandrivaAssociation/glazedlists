@@ -1,10 +1,12 @@
+%{?_javapackages_macros:%_javapackages_macros}
+
 # Work around koji build issues on ppc64
 # See https://www.redhat.com/archives/fedora-devel-list/2009-March/msg00022.html
 %global eclipse_dir $(ls -d /usr/lib*/eclipse)
 
 Name:           glazedlists
 Version:        1.9.1
-Release:        1.1
+Release:        1.2
 Summary:        A toolkit for transformations in Java
 Group:		Development/Java
 License:        (LGPLv2+ or MPLv1.1+) and ASL 2.0
@@ -76,6 +78,9 @@ ant -v dist jar sourcejar javadocjar deploy-init -DartifactId=%{name}
 
 # Maven artifact installation
 %mvn_artifact target/deploy/pom.xml target/deploy/%{name}-%{version}.jar
+
+# add compatibility alias
+%mvn_alias net.java.dev.glazedlists:glazedlists net.java.dev.glazedlists:glazedlists_java15
 
 %install
 %mvn_install -J target/docs/api
