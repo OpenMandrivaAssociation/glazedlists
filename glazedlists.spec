@@ -10,7 +10,7 @@ Release:        1.2
 Summary:        A toolkit for transformations in Java
 Group:		Development/Java
 License:        (LGPLv2+ or MPLv1.1+) and ASL 2.0
-Url:            http://www.glazedlists.com/
+Url:            https://www.glazedlists.com/
 BuildArch:      noarch
 
 Source0:        http://repo1.maven.org/maven2/net/java/dev/glazedlists/%{name}_java15/%{version}/glazedlists_java15-%{version}-dist.zip
